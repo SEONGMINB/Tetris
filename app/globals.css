@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.game-container {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.tetris-board {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(20, 30px);
+  gap: 1px;
+  background-color: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 0 auto;
+}
+
+.tetris-cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  background-color: #0f172a;
+  transition: all 0.1s ease;
+}
+
+.tetris-cell.filled {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.tetris-cell.I { background: linear-gradient(45deg, #06b6d4, #0891b2); }
+.tetris-cell.O { background: linear-gradient(45deg, #eab308, #ca8a04); }
+.tetris-cell.T { background: linear-gradient(45deg, #a855f7, #9333ea); }
+.tetris-cell.S { background: linear-gradient(45deg, #22c55e, #16a34a); }
+.tetris-cell.Z { background: linear-gradient(45deg, #ef4444, #dc2626); }
+.tetris-cell.J { background: linear-gradient(45deg, #3b82f6, #2563eb); }
+.tetris-cell.L { background: linear-gradient(45deg, #f97316, #ea580c); }
+
+.game-info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #06b6d4;
+  margin-bottom: 0.5rem;
+}
+
+.level {
+  font-size: 1.2rem;
+  color: #94a3b8;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 2rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.game-over {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.game-over-content {
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid #334155;
+}
+
+.game-over h2 {
+  color: #ef4444;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.restart-btn {
+  background: linear-gradient(45deg, #06b6d4, #0891b2);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.restart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+} 
